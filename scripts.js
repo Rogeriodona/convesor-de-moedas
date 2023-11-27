@@ -74,7 +74,7 @@ function changeCurrency() {
         currencyName.innerHTML = "libra"
         currencyImage.src = "./assets/libra1.png"
     }
-    convertValues()
+    convertValues ()
 }
 currencySelect.addEventListener("change", changeCurrency) 
 convertButton.addEventListener("click", convertValues)
