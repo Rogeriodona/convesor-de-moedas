@@ -9,7 +9,7 @@ const currencySelect = document.querySelector(".currency-select")
 function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
 
-    const CurrencyValueToConvert = document.querySelector(".currency-value-to-convert")
+    const CurrencyValueToConvert = document.querySelector(".currency-value-to-convert",)
     const CurrencyValueConverted = document.querySelector(".currency-value")
 
 
@@ -18,6 +18,7 @@ function convertValues() {
     const dolarToday = 4.90
     const euroToday = 5.35
     const libraToday = 6.18
+    const bitcoinToday = 181.921
 
 
     if (currencySelect.value == "dolar") {
@@ -40,14 +41,25 @@ if (currencySelect.value == "libra"){
     CurrencyValueConverted.innerHTML = new Intl.NumberFormat("en-GB", {
         style: "currency",
         currency:"GBP"
-    }).format(inputCurrencyValue/libraToday)
+
+    }).format(inputCurrencyValue / libraToday)
 }
+
+if (currencySelect.value == "bitcoin"){
+    CurrencyValueConverted.innerHTML =new Intl.NumberFormat("BTC-bitcoin",{
+    style: "currency",
+    currency:"BTC"
+
+}).format(inputCurrencyValue / bitcoinToday)
+
+}
+
+
 
     CurrencyValueToConvert.innerHTML = new Intl.NumberFormat("pt-BR", {
         style: "currency",
         currency: "BRL"
     }).format(inputCurrencyValue)
-
 
 }
 
@@ -63,8 +75,6 @@ function changeCurrency() {
         currencyImage.src = "./assets/dolar.png"
     }
 
-
-
     if (currencySelect.value == "euro") {
         currencyName.innerHTML = "euro"
         currencyImage.src = "./assets/euro.png"
@@ -72,8 +82,14 @@ function changeCurrency() {
 
     if (currencySelect.value == "libra") {
         currencyName.innerHTML = "libra"
-        currencyImage.src = "./assets/libra1.png"
+        currencyImage.src = "./assets/libra 1.png"
     }
+    if (currencySelect.value == "bitcoin"){
+        currencyName.innerHTML = "bitcoin"
+        currencyImage.src = "./assets/bitcoin.png"
+    }
+
+    
     convertValues ()
 }
 currencySelect.addEventListener("change", changeCurrency) 
