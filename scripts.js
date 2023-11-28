@@ -1,4 +1,4 @@
-console.log("FUNCIONOU")
+
 
 
 
@@ -46,7 +46,7 @@ if (currencySelect.value == "libra"){
 }
 
 if (currencySelect.value == "bitcoin"){
-    CurrencyValueConverted.innerHTML =new Intl.NumberFormat("BTC-bitcoin",{
+    CurrencyValueConverted.innerHTML = new Intl.NumberFormat("BTC-bitcoin",{
     style: "currency",
     currency:"BTC"
 
@@ -66,7 +66,7 @@ if (currencySelect.value == "bitcoin"){
 
 function changeCurrency() {
 
-    const currencyName = document.getElementById("currency-Name")
+    const currencyName = document.getElementById("currency-name")
     const currencyImage = document.querySelector(".currency-img")
 
 
